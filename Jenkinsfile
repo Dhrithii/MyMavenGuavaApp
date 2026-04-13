@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'MAVEN'   // Make sure this matches Jenkins Global Tool Configuration
+        maven 'MAVEN'
     }
 
     stages {
@@ -31,7 +31,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 echo 'Running the application...'
-                sh 'java -jar target/MyMavenGuavaApp-1.0-SNAPSHOT.jar'
+                sh 'java -jar target/MyMavenGuavaApp-1.0-SNAPSHOT-shaded.jar'
             }
         }
     }
