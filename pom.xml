@@ -8,28 +8,29 @@
   <name>MyMavenGuavaApp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-  
-<dependency>
-    <groupId>com.google.guava</groupId>
-    <artifactId>guava</artifactId>
-    <version>33.5.0-jre</version>
-    <scope>compile</scope>
-</dependency>
-<!-- Source: https://mvnrepository.com/artifact/com.google.guava/guava -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- Source: https://mvnrepository.com/artifact/commons-io/commons-io -->
+    
+    <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>33.4.0-jre</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
-    <version>2.21.0</version>
-    <scope>compile</scope>
+    <version>2.18.0</version>
 </dependency>
+
   </dependencies>
+  
   <!-- Build: Configuring plugins and build settings -->
 <build>
 <plugins>

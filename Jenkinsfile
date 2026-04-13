@@ -2,7 +2,7 @@ pipeline {
     agent any  // Use any available agent
 
     tools {
-        maven 'MAVEN'  // Ensure this matches the name configured in Jenkins
+        maven 'Maven'  // Ensure this matches the name configured in Jenkins
     }
     stages {
         stage('Checkout') {
@@ -22,7 +22,13 @@ pipeline {
                 sh 'mvn test'  // Run unit tests
             }
         }
-
+	
+	stage('Package')
+	{
+	steps{
+	sh 'mvn package'
+	}
+	}
         
         
        
