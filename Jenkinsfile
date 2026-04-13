@@ -31,7 +31,7 @@ pipeline {
         stage('Run Application') {
             steps {
                 echo 'Running shaded JAR...'
-                sh 'java -jar target/MyMavenGuavaApp-1.0-SNAPSHOT.jar'
+                sh 'mvn exec:JAVA -Dexec.mainClass="com.example.App"'
             }
         }
     }
