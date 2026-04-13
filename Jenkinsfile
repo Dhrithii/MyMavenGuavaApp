@@ -9,7 +9,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Building the project...'
+                echo 'Building project (fat JAR)...'
                 sh 'mvn clean package'
             }
         }
@@ -23,25 +23,25 @@ pipeline {
 
         stage('Check Target') {
             steps {
-                echo 'Checking generated JAR file...'
+                echo 'Checking JAR...'
                 sh 'ls -l target'
             }
         }
 
         stage('Run Application') {
             steps {
-                echo 'Running the application...'
-                sh 'java -jar target/MyMavenGuavaApp-1.0-SNAPSHOT-shaded.jar'
+                echo 'Running shaded JAR...'
+                sh 'java -jar target/MyMavenGuavaApp-1.0-SNAPSHOT.jar'
             }
         }
     }
 
     post {
         success {
-            echo 'Build successful!'
+            echo '✅ Build SUCCESS'
         }
         failure {
-            echo 'Build failed!'
+            echo '❌ Build FAILED'
         }
     }
 }
